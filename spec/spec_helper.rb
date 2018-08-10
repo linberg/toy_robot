@@ -1,6 +1,6 @@
 require 'table'
 require 'robot'
-require 'command'
+require 'computer'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
