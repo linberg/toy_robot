@@ -1,7 +1,9 @@
+require 'pry'
+
 class Robot
   attr_accessor :orientation
 
-  ORIENTATIONS = [
+  CARDINALS = [
     NORTH = :north,
     EAST = :east,
     SOUTH = :south,
@@ -9,13 +11,15 @@ class Robot
   ]
 
   def left
+    self.orientation = CARDINALS[CARDINALS.index(orientation) - 1]
   end
 
   def right
+    self.orientation = CARDINALS[CARDINALS.index(orientation) + 1]
   end
 
   def orient(orientation)
-    if Robot::ORIENTATIONS.include?(orientation)
+    if CARDINALS.include?(orientation)
       self.orientation = orientation
     end
   end

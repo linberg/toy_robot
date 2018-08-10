@@ -22,6 +22,10 @@ class Computer
       report
     when 'MOVE'
       move
+    when 'LEFT'
+      left
+    when 'RIGHT'
+      right
     end
   end
 
@@ -45,5 +49,15 @@ class Computer
     coordinate = @robot.coordinates
     position = @table.position
     @table.place(position[:x] + coordinate[:x], position[:y] + coordinate[:y])
+  end
+
+  def left
+    @robot.left
+    nil
+  end
+
+  def right
+    @robot.right
+    nil
   end
 end

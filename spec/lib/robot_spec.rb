@@ -4,6 +4,30 @@ describe 'Robot' do
 
   let(:robot) { Robot.new }
 
+  describe '#left' do
+    context 'robot is facing north and turns left' do
+      before {
+        robot.orient(:north)
+        robot.left
+       }
+      it 'will face west' do
+        expect(robot.orientation).to eq(:west)
+      end
+    end
+  end
+
+  describe '#right' do
+    context 'robot is facing east and turns right' do
+      before {
+        robot.orient(:east)
+        robot.right
+       }
+      it 'will face north' do
+        expect(robot.orientation).to eq(:south)
+      end
+    end
+  end
+
   describe '#orient' do
     it 'allows orientation to the north' do
       expect(robot.orient(:north)).not_to be_nil
@@ -12,7 +36,7 @@ describe 'Robot' do
     it 'allows orientation to the east' do
       expect(robot.orient(:east)).not_to be_nil
     end
-    
+
     it 'allows orientation to the south' do
       expect(robot.orient(:south)).not_to be_nil
     end
