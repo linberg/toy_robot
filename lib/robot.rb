@@ -5,7 +5,7 @@ class Robot
     NORTH = :north,
     EAST = :east,
     SOUTH = :south,
-    WEST = :west,
+    WEST = :west
   ]
 
   def left
@@ -17,6 +17,19 @@ class Robot
   def orient(orientation)
     if Robot::ORIENTATIONS.include?(orientation)
       self.orientation = orientation
+    end
+  end
+
+  def coordinates
+    case self.orientation
+    when :north
+      { x: 0, y: 1 }
+    when :east
+      { x: 1, y: 0 }
+    when :south
+      { x: 0, y: -1 }
+    when :west
+      { x: -1, y: 0 }
     end
   end
 end

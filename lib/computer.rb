@@ -1,6 +1,5 @@
 require 'table'
 require 'robot'
-require 'pry'
 
 class Computer
   attr_reader :table
@@ -21,6 +20,8 @@ class Computer
       place(coordinates)
     when 'REPORT'
       report
+    when 'MOVE'
+      move
     end
   end
 
@@ -38,5 +39,11 @@ class Computer
     position = @table.position
     orientation = @robot.orientation
     "#{position[:x]},#{position[:y]},#{orientation.to_s.upcase}"
+  end
+
+  def move
+    coordinate = @robot.coordinates
+    position = @table.position
+    @table.place(position[:x] + coordinate[:x], position[:y] + coordinate[:y])
   end
 end
