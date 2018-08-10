@@ -19,6 +19,8 @@ class Computer
     case operator
     when 'PLACE'
       place(coordinates)
+    when 'REPORT'
+      report
     end
   end
 
@@ -30,5 +32,11 @@ class Computer
 
     @table.place(x, y)
     @robot.orient(orientation)
+  end
+
+  def report
+    position = @table.position
+    orientation = @robot.orientation
+    "#{position[:x]},#{position[:y]},#{orientation.to_s.upcase}"
   end
 end

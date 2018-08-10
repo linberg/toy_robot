@@ -25,5 +25,12 @@ describe 'computer' do
         expect(computer.execute('0,0,NORTH')).to eq nil
       end
     end
+
+    describe 'REPORT' do
+      it 'reports current position of robot' do
+        computer.execute('PLACE 2,4,SOUTH')
+        expect(computer.execute('REPORT')).to eq '2,4,SOUTH'
+      end
+    end
   end
 end
