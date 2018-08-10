@@ -32,5 +32,13 @@ describe 'computer' do
         expect(computer.execute('REPORT')).to eq '2,4,SOUTH'
       end
     end
+
+    describe 'MOVE' do
+      it 'moves robot one square in the direction it is facing' do
+        computer.execute('PLACE 3,3,WEST')
+        computer.execute('MOVE')
+        expect(computer.execute('REPORT')).to eq '2,3,WEST'
+      end
+    end
   end
 end

@@ -1,8 +1,8 @@
 class Table
   attr_accessor :position
-  
+
   def place(x, y)
-    self.position = { x: x, y: y} if valid_position?(x, y)
+    self.position = { x: x, y: y } if valid_position?(x, y)
   end
 
   def valid_position?(x, y)
