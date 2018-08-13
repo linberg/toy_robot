@@ -45,7 +45,7 @@ describe 'computer' do
       end
 
       it 'does not MOVE robot if PLACE not executed' do
-        expect(computer.execute('MOVE')).to eq nil
+        expect(computer.execute('MOVE')).to eq 'Please place the robot.'
       end
     end
 
@@ -57,7 +57,7 @@ describe 'computer' do
       end
 
       it 'does not move robot left if PLACE not executed' do
-        expect(computer.execute('LEFT')).to eq nil
+        expect(computer.execute('LEFT')).to eq 'Please place the robot.'
       end
     end
 
@@ -69,7 +69,7 @@ describe 'computer' do
       end
 
       it 'does not move robot right if PLACE not executed' do
-        expect(computer.execute('RIGHT')).to eq nil
+        expect(computer.execute('RIGHT')).to eq 'Please place the robot.'
       end
     end
 

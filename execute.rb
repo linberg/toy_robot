@@ -8,7 +8,7 @@ command = STDIN.gets.chomp
 
 while command
   output = computer.execute(command)
-  puts output if command == 'REPORT'
+  puts output unless command.include?('PLACE')
   command = STDIN.gets.chomp
   break if command == 'exit'
 end

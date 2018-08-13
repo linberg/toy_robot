@@ -21,11 +21,11 @@ class Computer
     when 'REPORT'
       report if @table.has_a_robot?
     when 'MOVE'
-      move if @table.has_a_robot?
+      @table.has_a_robot? ? move : 'Please place the robot.'
     when 'LEFT'
-      left if @table.has_a_robot?
+      @table.has_a_robot? ? left : 'Please place the robot.'
     when 'RIGHT'
-      right if @table.has_a_robot?
+      @table.has_a_robot? ? right : 'Please place the robot.'
     end
   end
 
@@ -53,11 +53,9 @@ class Computer
 
   def left
     @robot.left
-    nil
   end
 
   def right
     @robot.right
-    nil
   end
 end
