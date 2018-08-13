@@ -1,6 +1,10 @@
 # Toy Robot Code Challenge
 
-## Installation:
+## Instructions:
+
+When in project folder, run following script:
+`ruby execute.rb`
+Using sample data, navigate the robot around the 5x5 table.
 
 ## Description:
 

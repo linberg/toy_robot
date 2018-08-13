@@ -1,5 +1,7 @@
 Here are a some sample commands and the expected output after having run the execute.rb script:
 
+---
+
 # INPUT 1
 PLACE 2,2,WEST
 MOVE
@@ -9,6 +11,8 @@ REPORT
 
 # OUTPUT 1
 0,2,SOUTH
+
+---
 
 # INPUT 2
 PLACE 0,4,SOUTH
@@ -21,11 +25,15 @@ REPORT
 # OUTPUT 2
 1,4,EAST
 
+---
+
 # INPUT 3
 MOVE
 
 # OUTPUT 3
 Please place the robot.
+
+---
 
 # INPUT 4
 PLACE 3,5,EAST
@@ -36,8 +44,10 @@ REPORT
 # OUTPUT 4
 3,4,SOUTH
 
-# INPUT
+---
+
+# INPUT 5
 LEFT
 
-# OUTPUT
+# OUTPUT 5
 Please place the robot.
