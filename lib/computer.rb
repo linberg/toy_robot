@@ -19,13 +19,13 @@ class Computer
     when 'PLACE'
       place(coordinates)
     when 'REPORT'
-      report
+      report if @table.has_a_robot?
     when 'MOVE'
-      move
+      move if @table.has_a_robot?
     when 'LEFT'
-      left
+      left if @table.has_a_robot?
     when 'RIGHT'
-      right
+      right if @table.has_a_robot?
     end
   end
 

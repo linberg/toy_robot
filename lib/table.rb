@@ -6,6 +6,10 @@ class Table
   end
 
   def valid_position?(x, y)
-    (x >= 0 && x <= 4 && y >= 0 && y <= 4)
+    (x >= 0 && x <= 5 && y >= 0 && y <= 5)
+  end
+
+  def has_a_robot?
+    self.position == nil ? false : true
   end
 end

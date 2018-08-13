@@ -4,6 +4,12 @@ describe 'Robot' do
 
   let(:robot) { Robot.new }
 
+  describe '#new' do
+    it 'creates an instance of Robot' do
+      expect(robot).to be_a Robot
+    end
+  end
+
   describe '#left' do
     context 'robot is facing north and turns left' do
       before {
@@ -14,16 +20,36 @@ describe 'Robot' do
         expect(robot.orientation).to eq(:west)
       end
     end
+
+    context 'robot is facing west and turns south' do
+      before {
+        robot.orient(:west)
+        robot.left
+       }
+      it 'will face west' do
+        expect(robot.orientation).to eq(:south)
+      end
+    end
   end
 
   describe '#right' do
-    context 'robot is facing east and turns right' do
+    context 'robot is facing west and turns right' do
       before {
-        robot.orient(:east)
+        robot.orient(:west)
         robot.right
        }
       it 'will face north' do
-        expect(robot.orientation).to eq(:south)
+        expect(robot.orientation).to eq(:north)
+      end
+    end
+
+    context 'robot is facing north and turns right' do
+      before {
+        robot.orient(:north)
+        robot.right
+       }
+      it 'will face north' do
+        expect(robot.orientation).to eq(:east)
       end
     end
   end
@@ -75,5 +101,4 @@ describe 'Robot' do
       end
     end
   end
-
 end

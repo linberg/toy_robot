@@ -15,7 +15,7 @@ class Robot
   end
 
   def right
-    self.orientation = CARDINALS[CARDINALS.index(orientation) + 1]
+    self.orientation = CARDINALS.fetch(CARDINALS.index(orientation) + 1, CARDINALS[0])
   end
 
   def orient(orientation)
