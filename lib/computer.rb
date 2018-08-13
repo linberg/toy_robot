@@ -1,5 +1,5 @@
-require 'table'
-require 'robot'
+require_relative 'table'
+require_relative 'robot'
 
 class Computer
   attr_reader :table

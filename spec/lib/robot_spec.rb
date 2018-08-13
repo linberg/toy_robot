@@ -48,7 +48,7 @@ describe 'Robot' do
         robot.orient(:north)
         robot.right
        }
-      it 'will face north' do
+      it 'will face east' do
         expect(robot.orientation).to eq(:east)
       end
     end
